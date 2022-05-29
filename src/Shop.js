@@ -48,7 +48,7 @@ export default function Shop() {
     return /^[а-яА-Яa-zA-Z0-9]+$/.test(desc);
   }
   return (
-    <div className="w-1/2">
+    <div className="sm:w-1/2 grid bg-gray-50 grid-cols-1 gap-4 px-6">
       <AddItem name={name} setName={setName} desc={desc} setDesc={setDesc} nameValidation={nameValidation(name)} descValidation={descValidation(desc)} onFormSubmit={handleFormSubmit} onAddClick={handleAddClick} />
       <div className="text-center ml-6 mr-6 pt-6 pb-6 bg-gray-50">
         {items.length === 0 && (

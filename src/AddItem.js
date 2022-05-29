@@ -3,7 +3,7 @@ import React from "react";
 export default function AddItem(props) {
 const form = <form onSubmit={props.onFormSubmit} className=" p-6 pb-0">
         <h2 className="text-center p-2 text-3xl font-extrabold text-gray-900">Список товаров:</h2>
-        <div className="text-center  bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6">
+        <div className="text-center px-4 py-5 flex flex-col justify-center">
           <label htmlFor="ui-textfield-name" className="p-2 text-sm font-medium text-gray-500">Название:</label>
           <input
             type="text"
@@ -15,7 +15,7 @@ const form = <form onSubmit={props.onFormSubmit} className=" p-6 pb-0">
             required
           />
         </div>
-        <div className="text-center bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6">
+        <div className="text-center  px-4 py-5 flex flex-col justify-center">
           <label htmlFor="ui-textfield-desc" className="p-2 text-sm font-medium text-gray-500">Описание:</label>
           <input
             type="text"
@@ -27,7 +27,7 @@ const form = <form onSubmit={props.onFormSubmit} className=" p-6 pb-0">
             required
           />
         </div>
-        <div className="form-footer text-center bg-gray-50 px-4 py-5 sm:grid grid justify-items-center sm:grid-cols-1 sm:gap-4 sm:px-6">
+        <div className="form-footer text-center  px-4 py-5 flex flex-wrap justify-center grid-cols-1 gap-4 px-6">
           <div className="validation mt-2 text-sm text-gray-600">
             {props.nameValidation && props.descValidation
               ? ""
