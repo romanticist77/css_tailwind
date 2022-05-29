@@ -27,7 +27,7 @@ const form = <form onSubmit={props.onFormSubmit} className=" p-6 pb-0">
             required
           />
         </div>
-        <div className="form-footer text-center  px-4 py-5 flex flex-wrap justify-center grid-cols-1 gap-4 px-6">
+        <div className="form-footer text-center px-4 py-5 flex flex-col items-center gap-1">
           <div className="validation mt-2 text-sm text-gray-600">
             {props.nameValidation && props.descValidation
               ? ""
@@ -36,7 +36,7 @@ const form = <form onSubmit={props.onFormSubmit} className=" p-6 pb-0">
           <label htmlFor="ui-button" />
           <input
             type="submit"
-            className="ui-button group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-56"
+            className="ui-button group w-full py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-56"
             id="ui-button"
             value="Добавить"
             onClick={props.onAddClick}
