@@ -3,7 +3,7 @@ import Item from "./Item.js";
 
 export default function ItemsList(props) {
     return props.items.map((item, index) => (
-      <ul className="ui-list w-[46.25%] ml-6 text-center bg-gray-50 px-4 py-5 sm:grid grid justify-items-center sm:grid-cols-1 sm:gap-4 sm:px-6">
+      <ul className="ui-list mx-6 text-center bg-gray-50 px-4 py-5 sm:grid grid justify-items-center sm:grid-cols-1 sm:gap-4 sm:px-6">
         <li key={index} className="ui-item-list ">
           <Item info={props.items[index]} />
           <label htmlFor={`item-button-${index}`} />

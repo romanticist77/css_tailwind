@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function AddItem(props) {
-const form = <form onSubmit={props.onFormSubmit} className="w-1/2 p-6 pb-0">
+const form = <form onSubmit={props.onFormSubmit} className=" p-6 pb-0">
         <h2 className="text-center p-2 text-3xl font-extrabold text-gray-900">Список товаров:</h2>
         <div className="text-center  bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6">
           <label htmlFor="ui-textfield-name" className="p-2 text-sm font-medium text-gray-500">Название:</label>
