@@ -23,7 +23,7 @@ export default function Shop() {
   const itemKey = uuidv4();
   const handleAddClick = () => {
     if (nameValidation(name) && descValidation(desc)) {
-      setItems([...items, { itemKey, name, desc }]);
+      setItems([...items, { id: items.length + 1, name, desc }]);
       setName("");
       setDesc("");
     }
@@ -34,18 +34,18 @@ export default function Shop() {
       setDesc("");
     }
   };
-  const handleRemoveClick = (number) => {
-    const filtration = items.filter((item, index) => index !== number);
+  const handleRemoveClick = (key) => {
+    const filtration = items.filter(({ id, name, desc }) => id !== key);
     setItems(filtration);
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
   };
   function nameValidation(name) {
-    return /^[а-яА-Яa-zA-Z0-9]+$/.test(name);
+    return /^[а-яА-Яa-zA-Z0-9 ]+$/.test(name);
   }
   function descValidation(desc) {
-    return /^[а-яА-Яa-zA-Z0-9]+$/.test(desc);
+    return /^[а-яА-Яa-zA-Z0-9 ]+$/.test(desc);
   }
   return (
     <div className="sm:w-1/2 grid bg-gray-50 grid-cols-1 gap-4 px-6">
@@ -55,7 +55,7 @@ export default function Shop() {
           <p className="ui-title mt-2 text-sm text-gray-600">Добавьте первый товар</p>
         )}
       </div>
-      <ItemsList items={items} itemKey={itemKey} onRemoveClick={handleRemoveClick}  />
+      <ItemsList items={items} onRemoveClick={handleRemoveClick}  />
     </div>
   );
 }
