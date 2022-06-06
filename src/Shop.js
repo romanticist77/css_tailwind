@@ -21,9 +21,25 @@ export default function Shop() {
   }, [items]);
 
   const itemKey = uuidv4();
-  const handleAddClick = () => {
+  
+  const requestOptions = {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({name: name, desc: desc})
+  };
+
+   const handleAddClick = () => {
     if (nameValidation(name) && descValidation(desc)) {
       setItems([...items, { id: items.length + 1, name, desc }]);
+      (async () => {
+        try {
+          const response = await fetch("https://covid-shop-mcs.herokuapp.com", requestOptions)
+          const json = response.json()
+          console.log(json)
+        } catch (error) {
+          console.error(error)
+        }
+      })();
       setName("");
       setDesc("");
     }
@@ -59,3 +75,14 @@ export default function Shop() {
     </div>
   );
 }
+
+
+
+
+// fetch("https://covid-shop-mcs.herokuapp.com", {
+//           method: "POST",
+//           headers: {"Content-Type": "application/json"},
+//           body: JSON.stringify({name: name, desc: desc})
+//         })
+//         .then(response => response.json())
+//         .then(data => console.log(data));
